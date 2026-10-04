@@ -1,0 +1,102 @@
+site_name: SERVER//DOCS
+site_description: Documentação viva do servidor — instalação, operação, backup e migração
+copyright: SERVER//DOCS · documentação viva do servidor
+
+# Depois de publicar no GitHub Pages, descomente e ajuste:
+# site_url: https://SEU_USUARIO.github.io/NOME_DO_REPO/
+# repo_url: https://github.com/SEU_USUARIO/NOME_DO_REPO
+# edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: pt-BR
+  icon:
+    logo: material/server-network
+  font:
+    text: Exo 2
+    code: JetBrains Mono
+  palette:
+    scheme: slate
+    primary: black
+    accent: cyan
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
+
+plugins:
+  - search:
+      lang: pt
+
+extra_css:
+  - https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap
+  - stylesheets/futuristic.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: "#"
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: ["."]
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Início:
+      - Visão geral: index.md
+      - Publicar no GitHub Pages: publicar.md
+  - Instalação:
+      - 1. Preparação (pendrive e BIOS): instalacao/preparacao.md
+      - 2. Instalando o Ubuntu Server: instalacao/ubuntu-server.md
+      - 3. Pós-instalação e segurança: instalacao/pos-instalacao.md
+      - 4. Rede e acesso remoto: instalacao/rede.md
+      - 5. Script de bootstrap (tudo de uma vez): instalacao/bootstrap.md
+  - Serviços:
+      - Docker e a pasta /opt/stack: servicos/docker.md
+      - n8n (PostgreSQL + túnel): servicos/n8n.md
+      - Dia a dia com os containers: servicos/gerenciamento.md
+      - Adicionando um novo serviço: servicos/novos-servicos.md
+  - Operação:
+      - Backup e restauração: operacao/backup.md
+      - Monitoramento e saúde: operacao/monitoramento.md
+      - Atualizações: operacao/atualizacoes.md
+      - Troubleshooting: operacao/troubleshooting.md
+  - Migração:
+      - Visão geral e checklist: migracao/visao-geral.md
+      - Passo a passo: migracao/passo-a-passo.md
+      - Hardware de servidor: migracao/hardware.md
+  - Referência:
+      - Comandos úteis: referencia/comandos.md
+      - Inventário: referencia/inventario.md
+      - Changelog: referencia/changelog.md
